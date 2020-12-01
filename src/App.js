@@ -2,18 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 import { Container } from 'react-bootstrap'
 import TrackList from './components/TrackList'
+import TrackListDetails from './components/TrackListDetails'
 import NavBar from './components/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  // const key = '35c1fe879c42bb852aca10f2a48302fc'
 
   return (
     <div>
-   
+   <Router>
         <NavBar />
-        <TrackList />
- 
+        <Route path="/" component={TrackList}/>
+        <Route path="/details/:mbid" component={TrackListDetails}/>
+    </Router>
     </div>
   );
 }

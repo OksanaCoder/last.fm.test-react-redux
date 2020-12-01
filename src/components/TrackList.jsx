@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { Link, Router } from "react-router-dom";
 
 const TrackList = () => {
     const url = `http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=35c1fe879c42bb852aca10f2a48302fc&format=json`
@@ -21,18 +22,19 @@ const TrackList = () => {
              
                 {trackList.map(item => {
                     return (
-                        <a href={item.artist.url}><Row className='mt-1' style={{padding: '5px', border: '1px solid #000', display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                        
+                        <Row className='mt-1' style={{padding: '5px', border: '1px solid #000', display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                         <Col lg={1} md={1} sm={1}>
-                        <img src={item.image[1]['#text']} />
+                        <a href={item.artist.url}><img src={item.image[1]['#text']} /></a>
                             
                         </Col>
                         <Col lg={11} md={11} sm={11}>
                      
-                        <h6>{item.artist.name}</h6>
+                        <Link to='/:mbid'><h6>{item.artist.name}</h6></Link>
                         <p>"{item.name}"</p>
                         </Col>
                         </Row>
-                        </a>
+                       
                     )
                 })}
           
