@@ -14,7 +14,7 @@ function App() {
    <Router>
         <NavBar />
         <Route path="/" component={TrackList}/>
-        <Route path="/:mbid" component={TrackListDetails}/>
+        <Route path="/artist/:artist" component={TrackListDetails}/>
     </Router>
     </div>
   );
