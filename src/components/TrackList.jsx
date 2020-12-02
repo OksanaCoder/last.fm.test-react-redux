@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { Link, Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const TrackList = () => {
     const url = `http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=35c1fe879c42bb852aca10f2a48302fc&format=json`
@@ -29,15 +29,16 @@ const TrackList = () => {
                             
                         </Col>
                         <Col lg={11} md={11} sm={11}>
-                     
-                        <Link to='/:mbid'><h6>{item.artist.name}</h6></Link>
+                         
+                        <Link to={{pathname: `track/${item.mbid}`, query: { mbid: item.mbid }}}><h6>{item.artist.name}</h6></Link>
                         <p>"{item.name}"</p>
                         </Col>
                         </Row>
                        
+
                     )
                 })}
-          
+           
           </Container>
         </div>
     )
