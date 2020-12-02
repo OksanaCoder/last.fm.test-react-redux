@@ -1,20 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import { Navbar, Nav, Form, FormControl, Button, Container } from 'react-bootstrap'
 
 const NavBar =  () => {
+ 
     return (
         <Navbar style={{background: '#000'}}>
             <Container>
-            <Navbar.Brand href="#home" className='text-white'>Navbar</Navbar.Brand>
-            <Nav className="mr-auto">
-            <Nav.Link href="#home" className='text-white'>Home</Nav.Link>
-            <Nav.Link href="#features" className='text-white'>Features</Nav.Link>
-            <Nav.Link href="#pricing" className='text-white'>Pricing</Nav.Link>
-            </Nav>
-            <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
-            </Form>
+            <Navbar.Brand href="#home"><img style={{width: '100px'}} src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Lastfm_logo.svg/1280px-Lastfm_logo.svg.png'/></Navbar.Brand>
+            
+            
             </Container>
        </Navbar>
     )
