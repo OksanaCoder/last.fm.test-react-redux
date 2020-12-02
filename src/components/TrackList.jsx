@@ -30,7 +30,7 @@ const TrackList = () => {
                         </Col>
                         <Col lg={11} md={11} sm={11}>
                          
-                        <Link to={{pathname: `track/${item.mbid}`, query: { mbid: item.mbid }}}><h6>{item.artist.name}</h6></Link>
+                        <Link to={{pathname: `artist/${item.artist.name}`, query: { query: item.artist.name }}}><h6>{item.artist.name}</h6></Link>
                         <p>"{item.name}"</p>
                         </Col>
                         </Row>

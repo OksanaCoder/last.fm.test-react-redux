@@ -1,9 +1,11 @@
 import React, { Component, useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Col, Row } from 'react-bootstrap'
 
-const TrackListDetails = () => {
- 
-    console.log('props', this.props.match.params.mbid)
+const TrackListDetails = (props) => {
+    const { trackList, location } = this.props;
+    const track = trackList.artist.find(item => item.name == location.query.item.name);
+    // console.log('props', this.props.match.params.mbid)
+    console.log('track', this.props.location.query);
     return (
         <Container>
             <Row>
